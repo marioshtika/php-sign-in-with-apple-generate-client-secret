@@ -1,7 +1,7 @@
 Sign in with Apple - Generate the client secret
 ===============================================
 
-Based on [this](https://github.com/GriffinLedingham/php-apple-signin) tutorial
+Based on [this](https://developer.okta.com/blog/2019/06/04/what-the-heck-is-sign-in-with-apple) tutorial
 
 General informations
 --------------------
@@ -10,7 +10,7 @@ Rather than static client secrets, Apple requires that you derive a client secre
 
 The Ruby JWT library supports this algorithm, so we’ll use that to generate the secret.
 
-This code generates a JWT using the ES256 algorithm which includes a handful of claims. This JWT expires in 6 months, which is the maximum lifetime Apple will allow. If you’re generating a new client secret JWT every time a user authenticates, then you should use a much shorter expiration date, but this allows us to generate the secret once and use it in our sample apps easily.
+This code generates a JWT using the ES256 algorithm which includes a handful of claims. **This JWT expires in 6 months, which is the maximum lifetime Apple will allow.** If you’re generating a new client secret JWT every time a user authenticates, then you should use a much shorter expiration date, but this allows us to generate the secret once and use it in our sample apps easily.
 
 This is described in Apple’s documentation [Generate and validate tokens](https://developer.apple.com/documentation/signinwithapplerestapi/generate_and_validate_tokens).
 
